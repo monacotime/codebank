@@ -67,7 +67,6 @@ we have got to import the keras libray and some other libraries to work with our
   ```
   more details on this function can be found in: 
 
-  [Keras documentation for image Preprocessing](https://keras.io/api/preprocessing/image/#imagedatagenerator-class)
 
 - __Sequential__
 
@@ -79,7 +78,7 @@ we have got to import the keras libray and some other libraries to work with our
 
   because it has got Conv2D and MaxPooling2D in it? im not sure, can someone tell me why we use Sequential? 😕
 
-  [Keras documentation for Sequential](https://keras.io/guides/sequential_model/)
+
 
 - __Conv2D__
 
@@ -87,7 +86,7 @@ we have got to import the keras libray and some other libraries to work with our
   
   The shape of the input is required to be specified when it is used in the first layer after which it may not be specified and it will find its shape from the previous layers
 
-  [Keras documentation for Conv2D](https://keras.io/api/layers/convolution_layers/convolution2d/)
+
 
 - __MaxPooling2D__
 
@@ -99,14 +98,13 @@ we have got to import the keras libray and some other libraries to work with our
 
   Applies an activation function to an output. You have to choose from the list of all the Activation functions
 
-  [Activation](https://keras.io/api/layers/regularization_layers/dropout/)
+
 
   The Dropout layer randomly sets input units to 0 with a frequency of `rate` at each step during training time, which helps prevent overfitting. Inputs not set to `0` are scaled up by `1/(1 - rate)` such that the sum over all inputs is unchanged.
-  [Dropout](https://keras.io/api/layers/regularization_layers/dropout/)
+
 
   > "*Just your regular densely-connected NN layer.*" - Keras documentation about Dense layers
 
-  [Dense](https://keras.io/api/layers/core_layers/dense/)
 
 - __image__
 
@@ -211,7 +209,7 @@ valid_generator = valid_datagen.flow_from_directory(
 
 the way this works is...
 
-![conv nn](https://miro.medium.com/max/2000/1*vkQ0hXDaQv57sALXAJquxA.jpeg)
+
 
 Okay lets break it down step by step: 
 
@@ -223,13 +221,13 @@ Okay lets break it down step by step:
   
   Want to see what the curve looks like?
 
-  ![relu](https://miro.medium.com/max/357/1*oePAhrm74RNnNEolprmTaQ.png)
+
 
   this here is relu, its a simple graph. okay now that is out the way lets go to the next thing called `Convloving`? `Convoluting`?
   
   well the thing is... see this 
 
-  ![alt text](https://miro.medium.com/max/1000/1*GcI7G-JLAQiEoCON7xFbhg.gif)
+
 
   You have to understand what a `kernal` and `weights` is first
 
@@ -245,7 +243,7 @@ Okay lets break it down step by step:
   ```
   and this kernal goes down the page in this manner:
 
-  ![alt text](https://miro.medium.com/max/1400/1*ciDgQEjViWLnCbmX-EeSrA.gif)
+
 
   Here the "page" is the input space of the Convolutional layer.
 
@@ -253,7 +251,7 @@ Okay lets break it down step by step:
 
   the extracted matrix of feature is smaller because it is very feature dense as shown below: 
 
-  ![alt text](https://miro.medium.com/max/790/1*1VJDP6qDY9-ExTuQVEOlVg.gif)
+
 
    And this way we extract the higher level features in the input and decrease the computional necessaty by making the input space to the next layer even smaller. 
 
@@ -267,11 +265,11 @@ Okay lets break it down step by step:
 
   how the pooling layer works looks very similar to how the convolutional layer works: 
 
-  ![alt text](https://miro.medium.com/max/792/1*uoWYsCV5vBU8SHFPAPao-w.gif)
+
 
   regular pooling vs max pooling: 
 
-  ![](https://miro.medium.com/max/1000/1*KQIEqhxzICU7thjaQBfPBQ.png)
+
 
   if you noticed above, the max pooling only takes the maximum value instead of the average. this has performs better aparantly due to reasons beyond me.
 
@@ -289,7 +287,7 @@ This `Dense` layer then converges to give only one selected `Categories` of outp
 
 You can see it in this diagram: 
 
-![alt text](https://miro.medium.com/max/1400/1*kToStLowjokojIQ7pY2ynQ.jpeg)
+
 
 Where you see:
 
@@ -397,7 +395,7 @@ Here we train the model by calling the simple method called
 
 more detail about it can be found on: 
 
-[More details about fit_generator()](https://www.geeksforgeeks.org/keras-fit-and-keras-fit_generator/)
+
 
 
 ```python
@@ -475,84 +473,80 @@ for img_path in os.listdir(test_path):
 ```
 
 
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_0.png)
 
-
-    Anish
-    
-
-
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_2.png)
 
 
     Anish
     
 
 
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_4.png)
+
+
+
+    Anish
+    
+
+
+
 
 
     Sir Chaitu
     
 
 
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_6.png)
 
-
-    Anish
-    
-
-
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_8.png)
-
-
-    Rudra
-    
-
-
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_10.png)
 
 
     Anish
     
 
 
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_12.png)
 
-
-    Rudra
-    
-
-
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_14.png)
 
 
     Rudra
     
 
 
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_16.png)
+
+
+
+    Anish
+    
+
+
+
+
+
+    Rudra
+    
+
+
+
+
+
+    Rudra
+    
+
+
 
 
     Sir Chaitu
     
 
 
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_18.png)
+
 
 
     Sir Chaitu
     
 
 
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_20.png)
+
 
 
     Rudra
     
-
-
-![png](colab%20-%20Recognizing%20faces%20of%20friends_files/colab%20-%20Recognizing%20faces%20of%20friends_17_22.png)
 
 
     Sir Chaitu
@@ -577,4 +571,4 @@ time to move onto more complicated and challanging tasks
 
 but not before i celebrate and reward myslef 🥳
 
-![alt text](https://media.giphy.com/media/xeXEpUVvAxCV2/giphy.gif)
+
